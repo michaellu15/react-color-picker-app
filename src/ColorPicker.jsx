@@ -1,4 +1,4 @@
-import React, { useState, useMemo} from 'react'
+import React, { useState, useEffect} from 'react'
 function hexToRGB(hex) {
     let r = 0;
     let g = 0;
@@ -64,12 +64,14 @@ function getOptimalTextColor(hexBackgroundColor){
 function ColorPicker() {
 
     const [color, setColor] = useState("#000000");
+    const[textColor,setTextColor]= useState("#FFFFFF");
 
     function handleColorChange(event) {
         setColor(event.target.value);
     }
-
-    const textColor = useMemo(()=>getOptimalTextColor(color),[color]);
+    useEffect(()=>{
+        setTextColor(getOptimalTextColor(color));
+    },[color]);
     return (
         <div className="color-picker-container">
             <h1>Color Picker</h1>
