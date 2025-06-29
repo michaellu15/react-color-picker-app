@@ -1,2 +1,3 @@
-# This is a very basic React App which is a Color Picker
+# Color Picker
+(https://michaellu15.github.io/react-color-picker-app/)
 
